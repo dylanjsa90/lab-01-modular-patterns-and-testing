@@ -1,19 +1,13 @@
 module.exports = function(cowsay) {
-  var header = ' _' + '_'.repeat(cowsay.length) + '_ ';
+  var topBorder = ' _' + '_'.repeat(cowsay.length) + '_ \n';
   var botBorder = ' -' + '-'.repeat(cowsay.length) + '- ';
-  var says = '< ' + cowsay + ' >';
-  var theCow = '\n' +
+  var says = '< ' + cowsay + ' >\n';
+  const theCow = '\n' +
   '         \\    ^__^ \n' +
-  '           \\   (oo)\\_______ \n' +
+  '          \\   (oo)\\_______ \n' +
   '              (__) \\      )\\/\\ \n' +
   '                   ||----W | \n' +
   '                   ||     ||';
 
-  var cow = '
-  |
-  |
-  |
-                      ';
-  // cow.cowsays = cow.top + '\n' + cow.says + '\n' + cow.bot + '\n' + cow.one + '\n' + cow.two + '\n' + cow.thr + '\n' + cow.fou + '\n' + cow.fiv;
-  // return cow;
+  return topBorder + says + botBorder + theCow;
 };

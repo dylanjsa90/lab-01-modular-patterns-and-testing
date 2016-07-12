@@ -2,7 +2,7 @@
   "name": "lab-01-modular-patterns-and-testing",
   "version": "1.0.0",
   "description": "[![Build Status](https://travis-ci.org/codefellows-sea-js-401d8-assignments/lab-01-modular-patterns-and-testing.svg?branch=master)](https://travis-ci.org/codefellows-sea-js-401d8-assignments/lab-01-modular-patterns-and-testing)",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/dylanjsa90/lab-01-modular-patterns-and-testing.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dylan Sanders",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dylanjsa90/lab-01-modular-patterns-and-testing/issues"
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/dylanjsa90/lab-01-modular-patterns-and-testing#readme",
   "devDependencies": {
     "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "mocha": "^2.5.3"
   }
 }
