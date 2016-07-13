@@ -44,23 +44,19 @@ var options = {
   useEslintrc: false
 };
 
-
-var watcher = gulp.watch(['test/**/*.js', 'lib/**/*.js'], ['lint:app', 'lint:test', 'lint:gulp', 'mocha:app']);
-watcher.on('change', function() {
-  console.log('watcher test');
-});
+var watcher = gulp.watch(['test/**/*.js', 'lib/**/*.js'], ['lint:all', 'mocha:app']);
 
 var testFiles = ['test/**/*.js'];
 var appFile = ['lib/**/*.js'];
 var gulpFile = ['gulpfile.js'];
-gulp.task('lint:app', () => {
+gulp.task('lint:all', () => {
   gulp.src(appFile)
-      .pipe(eslint(options))
-      .pipe(eslint.format());
-});
-
-gulp.task('lint:test', () => {
+    .pipe(eslint(options))
+    .pipe(eslint.format());
   gulp.src(testFiles)
+    .pipe(eslint(options))
+    .pipe(eslint.format());
+  gulp.src(gulpFile)
     .pipe(eslint(options))
     .pipe(eslint.format());
 });
@@ -70,10 +66,4 @@ gulp.task('mocha:app', () => {
     .pipe(mocha());
 });
 
-gulp.task('lint:gulp', () => {
-  gulp.src(gulpFile)
-  .pipe(eslint(options))
-  .pipe(eslint.format());
-});
-
-gulp.task('default', ['lint:app', 'lint:test','lint:gulp', 'mocha:app']);
+gulp.task('default', ['lint:all', 'mocha:app']);
